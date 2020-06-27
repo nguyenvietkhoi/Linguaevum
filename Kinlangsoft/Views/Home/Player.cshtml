@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Player";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+
+<h2>Player</h2>
+<input id="fdname" type="text" name="Folder" value="VNM0001.mp3">
+<button type="button" onclick="loadfile()">Load</button><br />
+<audio id="srcfile" controls style="width: 800px;">
+    <source src="../GMS/VNM/VNM0001.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<br />
+<input id="fdname2" type="text" name="Folder" value="VNM0001.mp3">
+<button type="button" onclick="loadfile2()">Load</button><br />
+<audio id="srcfile2" controls style="width: 800px;">
+    <source src="../GMS/VNM/VNM0001.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<script>
+    function loadfile() {
+        var filename = $("#fdname").val();
+        $("#srcfile").attr("src", "../GMS/"+filename.substring(0, 3)+"/"+filename);
+        $("#srcfile").load();
+    }
+
+    function loadfile2() {
+        var filename = $("#fdname2").val();
+        $("#srcfile2").attr("src", "../GMS/" + filename.substring(0, 3) + "/" + filename);
+        $("#srcfile2").load();
+    }
+</script>

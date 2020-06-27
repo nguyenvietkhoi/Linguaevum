@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Map";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="display: none">
+    <div id="infowindow-content">
+        <img id="place-icon" src="" height="16" width="16">
+        <span id="place-name" class="title"></span><br>
+        Place ID <span id="place-id"></span><br>
+        <span id="place-address"></span>
+    </div>
+</div>
+<table style="height: 100%; width: 100%">
+    <tr>
+        <td style="width: 500px; height: 100%; background-color: #2f2f2f;">
+            <select id="labelscripttype" onchange="scriptChange()">
+                <option value=0 selected>Sinogram</option>
+                <option value=1>Alphabet</option>
+                <option value=2>Default Map</option>
+            </select>
+        </td>
+        <td rowspan="2">
+            <div id="googleMap" style="height: 100%; width: initial;"></div>
+        </td>
+    </tr>
+    <tr>
+        <td style="height: 20px; background-color: #111;"></td>
+    </tr>
+</table>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script type="text/javascript" src="../Scripts/sql.js"></script>
+<script src="../Scripts/initmap.js"></script>
+<script src="../Scripts/elabel.js"></script>
+<script src="../Scripts/map.js"></script>
+
+<link rel="stylesheet" href="https://js.arcgis.com/3.31/esri/css/esri.css">
+<style>
+    hr {
+        display: none;
+    }
+    footer {
+        position: fixed;
+        bottom: 2px;
+        color: #aaa;
+    }
+    .body-content {
+        height: -webkit-fill-available;
+        padding: 0;
+    }
+    html, body, #esri-map-container {
+        padding: 0px;
+        width: 100%;
+        margin: 0px;
+        height: 100%;
+    }
+
+    .label_1, .label_2, .label_3, .label_4, .label_5 {
+        font-family: Calibri, HanaMinA, HanaMinB;
+        font-size: 17px;
+        font-weight: bolder;
+        text-shadow: 0 0 3px #f5f1e6, 0 0 5px #fff;
+    }
+    .label_1 {
+        font-size: 24px;
+    }
+    .label_4 {
+        color: #5c3d70;
+    }
+    .label_5 {
+        font-size: 18px;
+        color: #74412e;
+    }
+</style>
+
+@*<script src="https://js.arcgis.com/3.31/"></script>
+<script src="../Scripts/OpenLayers.js"></script>
+<script>
+    function init() {
+        map = new OpenLayers.Map("basicMap");
+        var mapnik = new OpenLayers.Layer.OSM();
+        var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
+        var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+        var position = new OpenLayers.LonLat(13.41, 52.52).transform(fromProjection, toProjection);
+        var zoom = 15;
+
+        map.addLayer(mapnik);
+        map.setCenter(position, zoom);
+    }
+</script>
+
+<div id="basicMap"></div>*@

@@ -1,0 +1,143 @@
+﻿@{
+
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Hidden("Hannom", Resources.GUILang.Hannom)
+@Html.Hidden("Yue", Resources.GUILang.Yue)
+@Html.Hidden("Mandarin", Resources.GUILang.Mandarin)
+@Html.Hidden("Midchinese", Resources.GUILang.Midchinese)
+@Html.Hidden("Wu", Resources.GUILang.Wu)
+@Html.Hidden("Eastmin", Resources.GUILang.Eastmin)
+@Html.Hidden("Southmin", Resources.GUILang.Southmin)
+@Html.Hidden("Hakka", Resources.GUILang.Hakka)
+@Html.Hidden("Sawndip", Resources.GUILang.Sawndip)
+@Html.Hidden("Hankor", Resources.GUILang.Hankor)
+@Html.Hidden("Japanese", Resources.GUILang.Japanese)
+@Html.Hidden("Tay", Resources.GUILang.Tay)
+@Html.Hidden("SinoThai", Resources.GUILang.SinoThai)
+@Html.Hidden("SinoLao", Resources.GUILang.SinoLao)
+@Html.Hidden("SinoTaidam", Resources.GUILang.SinoTaidam)
+@Html.Hidden("SinoLanna", Resources.GUILang.SinoLanna)
+@Html.Hidden("SinoTaiyai", Resources.GUILang.SinoTaiyai)
+@Html.Hidden("SinoTainuea", Resources.GUILang.SinoTainuea)
+@Html.Hidden("SinoTailue", Resources.GUILang.SinoTailue)
+@Html.Hidden("SinoTaiyo", Resources.GUILang.SinoTaiyo)
+@Html.Hidden("DictGuide", Resources.GUILang.DictGuide)
+<script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../Scripts/sql.js"></script>
+<script type="text/javascript" src="../Scripts/ime.js"></script>
+<script type="text/javascript" src="../Scripts/imemobile.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=oxZ9YHww"></script>
+@*<script src='https://code.responsivevoice.org/responsivevoice.js'></script>*@
+
+<div id="waitscreen"></div>
+<div class="jumbotron">
+    <table style="width: 100%; height: 100%;">
+        <tr>
+            <td style="width: 100%;">
+                <textarea id="txtPad" style="width: 100%; height: 80vh; min-height: 452px; font-size: 16px" onkeydown="txtPadKeyDown(event)" onkeyup="txtPadKeyInput(event)" onclick="offpad()"></textarea>
+                <textarea id="txtPadout" style="display: none; width: 50%; min-height: 452px; height: 80vh; background-color: #fff; font-size: 16px; float: right; " onchange="focuspad()" onfocus="focuspad()"></textarea>
+            </td>
+            <td valign="top" style="padding: 1px 2px; ">
+
+                <table id="outlist">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div id="rubytype"></div>
+                        </td>
+                    </tr>
+                    <tr><td>1</td><td id="w1" class="outopt" onclick="setSelectedIndex(1)"></td></tr>
+                    <tr><td>2</td><td id="w2" class="outopt" onclick="setSelectedIndex(2)"></td></tr>
+                    <tr><td>3</td><td id="w3" class="outopt" onclick="setSelectedIndex(3)"></td></tr>
+                    <tr><td>4</td><td id="w4" class="outopt" onclick="setSelectedIndex(4)"></td></tr>
+                    <tr><td>5</td><td id="w5" class="outopt" onclick="setSelectedIndex(5)"></td></tr>
+                    <tr><td>6</td><td id="w6" class="outopt" onclick="setSelectedIndex(6)"></td></tr>
+                    <tr><td>7</td><td id="w7" class="outopt" onclick="setSelectedIndex(7)"></td></tr>
+                    <tr><td>8</td><td id="w8" class="outopt" onclick="setSelectedIndex(8)"></td></tr>
+                    <tr><td>9</td><td id="w9" class="outopt" onclick="setSelectedIndex(9)"></td></tr>
+                </table>
+    <table style="width: 100%; text-align: center; color: #000;">
+        <tr>
+            <td style="background: #c19723; font-size: 12px" onclick="leftopt()"><</td>
+            <td></td>
+            <td style="background: #c19723; font-size: 12px" onclick="rightopt()">></td>
+        </tr>
+    </table>
+                <div id="example">
+                </div>
+            </td>
+        </tr>
+    </table>
+    
+
+</div>
+<nav class="navbar navbar-inverse" style="font-size: 12px; background-image: url('../Resources/wave.png'); border-radius: 0; border: 0; margin: 0;">
+    <div class="container-fluid">
+        <div class="navbar-header" style="float: right;">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a onclick="speakpad()" style="padding: 0px;">
+                        <span><img class="funcbutt" src="/Resources/speak.png" style="height: 20px; margin: 7px 3px;" /></span>
+                    </a>
+                </li>
+                <li class="dropup">
+                    <a style="padding: 0px;" class="dropdown-toggle" data-toggle="dropdown">
+                        <span>
+                            <img class="funcbutt" src="/Resources/transcript.png" style="height: 26px; margin: 4px 0px;" />
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li onclick="convertpad(0)"><a>文 >> A/글</a></li>
+                        <li onclick="convertpad(1)"><a>A/글 >> 文</a></li>
+                    </ul>
+                </li>
+                <li id="borrowings" onclick="myCheck(0)"><a>假</a></li>
+                <li id="variants" onclick="myCheck(1)"><a>異</a></li>
+                @*<li id="autocomplete" onclick="myCheck(2)"><a>…</a></li>*@
+            </ul>
+        </div>
+        <div class="navbar-header" style="float: left;" id="myNavbar">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <span id="opttablename">@Resources.GUILang.Hannom</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li onclick="opttableselect(0)"><a>@Resources.GUILang.Hannom</a></li>
+                        <li onclick="opttableselect(1)"><a>@Resources.GUILang.Midchinese</a></li>
+                        <li onclick="opttableselect(2)"><a>@Resources.GUILang.Southmin</a></li>
+                        <li onclick="opttableselect(3)"><a>@Resources.GUILang.Eastmin</a></li>
+                        <li onclick="opttableselect(4)"><a>@Resources.GUILang.Hakka</a></li>
+                        <li onclick="opttableselect(5)"><a>@Resources.GUILang.Mandarin</a></li>
+                        <li onclick="opttableselect(6)"><a>@Resources.GUILang.Yue</a></li>
+                        <li onclick="opttableselect(7)"><a>@Resources.GUILang.Wu</a></li>
+                        <li onclick="opttableselect(8)"><a>@Resources.GUILang.Hankor</a></li>
+                        <li onclick="opttableselect(9)"><a>@Resources.GUILang.Japanese</a></li>
+                        <li onclick="opttableselect(10)"><a>@Resources.GUILang.Sawndip</a></li>
+                        <li onclick="opttableselect(11)"><a>@Resources.GUILang.Tay</a></li>
+                        <li onclick="opttableselect(12)"><a>@Resources.GUILang.SinoThai</a></li>
+                        <li onclick="opttableselect(13)"><a>@Resources.GUILang.SinoLao</a></li>
+                        <li onclick="opttableselect(14)"><a>@Resources.GUILang.SinoTaidam</a></li>
+                        <li onclick="opttableselect(15)"><a>@Resources.GUILang.SinoLanna</a></li>
+                        <li onclick="opttableselect(16)"><a>@Resources.GUILang.SinoTaiyai</a></li>
+                        <li onclick="opttableselect(17)"><a>@Resources.GUILang.SinoTainuea</a></li>
+                        <li onclick="opttableselect(18)"><a>@Resources.GUILang.SinoTailue</a></li>
+                        <li onclick="opttableselect(19)"><a>@Resources.GUILang.SinoTaiyo</a></li>
+                    </ul>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <span id="kbname">文</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li id="kb0" onclick="optkeyboard(0)"><a>文</a></li>
+                        <li id="kb1" onclick="optkeyboard(1)"><a>A/글</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+

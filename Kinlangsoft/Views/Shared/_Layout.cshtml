@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title @Resources.GUILang.Linguevity</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div style="position: fixed">
+        </div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#layoutbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="/Resources/tho.png" class="logo" />
+                                @Html.ActionLink(Resources.GUILang.Linguevity, "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse" id="layoutbar">
+              @*  @Html.Partial("_LoginPartial")*@
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">@Resources.GUILang.IME</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink(@Resources.GUILang.Sinic, "IME", "Home")</li>
+                            <li>@Html.ActionLink(@Resources.GUILang.Brahmic, "Brahmic", "Home")</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">@Resources.GUILang.Language</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Base/ChangeCurrentCulture/0">English</a></li>
+                            <li><a href="/Base/ChangeCurrentCulture/1">Tiếng Việt (Chữ Quốc ngữ)</a></li>
+                            <li><a href="/Base/ChangeCurrentCulture/2">㗂越（漢喃）</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <hr />
+    <footer>
+        <p style="margin: 0 0 0 30px; font-size: 12px;">&copy; @DateTime.Now.Year - Linguaevum</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

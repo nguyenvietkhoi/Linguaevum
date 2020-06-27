@@ -1,0 +1,220 @@
+﻿@{
+
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Hidden("Hannom", Resources.GUILang.Hannom)
+@Html.Hidden("Yue", Resources.GUILang.Yue)
+@Html.Hidden("Mandarin", Resources.GUILang.Mandarin)
+@Html.Hidden("Midchinese", Resources.GUILang.Midchinese)
+@Html.Hidden("Wu", Resources.GUILang.Wu)
+@Html.Hidden("Eastmin", Resources.GUILang.Eastmin)
+@Html.Hidden("Southmin", Resources.GUILang.Southmin)
+@Html.Hidden("Hakka", Resources.GUILang.Hakka)
+@Html.Hidden("Sawndip", Resources.GUILang.Sawndip)
+@Html.Hidden("Hankor", Resources.GUILang.Hankor)
+@Html.Hidden("Japanese", Resources.GUILang.Japanese)
+@Html.Hidden("Tay", Resources.GUILang.Tay)
+@Html.Hidden("SinoThai", Resources.GUILang.SinoThai)
+@Html.Hidden("SinoLao", Resources.GUILang.SinoLao)
+@Html.Hidden("SinoTaidam", Resources.GUILang.SinoTaidam)
+@Html.Hidden("SinoLanna", Resources.GUILang.SinoLanna)
+@Html.Hidden("SinoTaiyai", Resources.GUILang.SinoTaiyai)
+@Html.Hidden("SinoTainuea", Resources.GUILang.SinoTainuea)
+@Html.Hidden("SinoTailue", Resources.GUILang.SinoTailue)
+@Html.Hidden("SinoTaiyo", Resources.GUILang.SinoTaiyo)
+@Html.Hidden("DictGuide", Resources.GUILang.DictGuide)
+
+<div id="waitscreen"></div>
+<script type="text/javascript">
+    if (navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ) {
+        window.location = "/Home/IMEmobile";
+    }
+</script>
+<script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../Scripts/sql.js"></script>
+<script type="text/javascript" src="../Scripts/ime.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=oxZ9YHww"></script>
+@*<script src='https://code.responsivevoice.org/responsivevoice.js'></script>*@
+<div class="jumbotron">
+    <table style="width: 100%; height: 100%;">
+        <tr>
+            <td rowspan="5" style="width: 100%;">
+                <textarea id="txtPad" style="width: 100%; height: 68vh; font-size: 20px" onkeypress="txtPadKeyTyped(event)" onkeydown="txtPadKeyPressed(event)" onkeyup="txtPadKeyReleased(event)" onclick="offpad()"></textarea>
+                <textarea id="txtPadout" style="display: none; width: 50%; height: 68vh; background-color: #fff; font-size: 20px; float: right; " onchange="focuspad()" onfocus="focuspad()"></textarea>
+                <nav class="navbar navbar-inverse" style="background-image: url('../Resources/wave.png'); border-radius: 0; border: 0; margin: 0;">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="dropup">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <span id="opttablename">@Resources.GUILang.Hannom</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu scrollable-menu">
+                                        <li onclick="opttableselect(0)"><a>@Resources.GUILang.Hannom</a></li>
+                                        <li onclick="opttableselect(1)"><a>@Resources.GUILang.Midchinese</a></li>
+                                        <li onclick="opttableselect(2)"><a>@Resources.GUILang.Southmin</a></li>
+                                        <li onclick="opttableselect(3)"><a>@Resources.GUILang.Eastmin</a></li>
+                                        <li onclick="opttableselect(4)"><a>@Resources.GUILang.Hakka</a></li>
+                                        <li onclick="opttableselect(5)"><a>@Resources.GUILang.Mandarin</a></li>
+                                        <li onclick="opttableselect(6)"><a>@Resources.GUILang.Yue</a></li>
+                                        <li onclick="opttableselect(7)"><a>@Resources.GUILang.Wu</a></li>
+                                        <li onclick="opttableselect(8)"><a>@Resources.GUILang.Hankor</a></li>
+                                        <li onclick="opttableselect(9)"><a>@Resources.GUILang.Japanese</a></li>
+                                        <li onclick="opttableselect(10)"><a>@Resources.GUILang.Sawndip</a></li>
+                                        <li onclick="opttableselect(11)"><a>@Resources.GUILang.Tay</a></li>
+                                        <li onclick="opttableselect(12)"><a>@Resources.GUILang.SinoThai</a></li>
+                                        <li onclick="opttableselect(13)"><a>@Resources.GUILang.SinoLao</a></li>
+                                        <li onclick="opttableselect(14)"><a>@Resources.GUILang.SinoTaidam</a></li>
+                                        <li onclick="opttableselect(15)"><a>@Resources.GUILang.SinoLanna</a></li>
+                                        <li onclick="opttableselect(16)"><a>@Resources.GUILang.SinoTaiyai</a></li>
+                                        <li onclick="opttableselect(17)"><a>@Resources.GUILang.SinoTainuea</a></li>
+                                        <li onclick="opttableselect(18)"><a>@Resources.GUILang.SinoTailue</a></li>
+                                        <li onclick="opttableselect(19)"><a>@Resources.GUILang.SinoTaiyo</a></li>
+                                    </ul>
+                                <li class="dropup">
+                                    <a class="dropdown-toggle" data-toggle="dropdown">
+                                        <span id="kbname">E→文</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li id="kb0" onclick="optkeyboard(0)"><a>Eng → 文</a></li>
+                                        <li id="kb1" onclick="optkeyboard(1)"><a>Eng → ở/อ/か/글</a></li>
+                                        <li id="kb1" onclick="optkeyboard(2)"><a>ở/อ/か/글 → 文</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="background-color: #d48600">
+                                    <a onclick="speakpad()" style="padding: 0px;">
+                                        <span><img class="funcbutt speakbutt" src="/Resources/speak.png"/></span>
+                                    </a>
+                                </li>
+                                <li class="dropup" style="background-color: #121890">
+                                    <a style="padding: 0px;" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span>
+                                            <img class="funcbutt transbutt" src="/Resources/transcript.png"/>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li onclick="convertpad(0)"><a>文 → A/글</a></li>
+                                        <li onclick="convertpad(1)"><a>A/글 → 文</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropup" id="keyboardbutton" onclick="togglekeyboard()" style="background-color: #eee;">
+                                    <a>⌨️</a>
+                                    <div class="dropdown-menu text-left" id="keyboard" style="right: -100px;">
+                                        <div dir="ltr" style="direction: ltr;user-select: none;">
+                                            <div style="white-space: nowrap; user-select: none;">
+                                                <button id="K192" type="button" class="vk-btn" style="user-select: none; width: 22px;" disabled="true">`</button>
+                                                <button id="K49" type="button" class="vk-btn" style="user-select: none;" disabled="true">1</button>
+                                                <button id="K50" type="button" class="vk-btn" style="user-select: none;" disabled="true">2</button>
+                                                <button id="K51" type="button" class="vk-btn" style="user-select: none;" disabled="true">3</button>
+                                                <button id="K52" type="button" class="vk-btn" style="user-select: none;" disabled="true">4</button>
+                                                <button id="K53" type="button" class="vk-btn" style="user-select: none;" disabled="true">5</button>
+                                                <button id="K54" type="button" class="vk-btn" style="user-select: none;" disabled="true">6</button>
+                                                <button id="K55" type="button" class="vk-btn" style="user-select: none;" disabled="true">7</button>
+                                                <button id="K56" type="button" class="vk-btn" style="user-select: none;" disabled="true">8</button>
+                                                <button id="K57" type="button" class="vk-btn" style="user-select: none;" disabled="true">9</button>
+                                                <button id="K48" type="button" class="vk-btn" style="user-select: none;" disabled="true">0</button>
+                                                <button id="K189" type="button" class="vk-btn" style="user-select: none;" disabled="true">-</button>
+                                                <button id="K187" type="button" class="vk-btn" style="user-select: none; width: 22px;" disabled="true">=</button>
+                                            </div><div style="white-space: nowrap; user-select: none;">
+                                                <button id="K81" type="button" class="vk-btn" style="user-select: none;" disabled="true">q</button>
+                                                <button id="K87" type="button" class="vk-btn" style="user-select: none;" disabled="true">w</button>
+                                                <button id="K69" type="button" class="vk-btn" style="user-select: none;" disabled="true">e</button>
+                                                <button id="K82" type="button" class="vk-btn" style="user-select: none;" disabled="true">r</button>
+                                                <button id="K84" type="button" class="vk-btn" style="user-select: none;" disabled="true">t</button>
+                                                <button id="K89" type="button" class="vk-btn" style="user-select: none;" disabled="true">y</button>
+                                                <button id="K85" type="button" class="vk-btn" style="user-select: none;" disabled="true">u</button>
+                                                <button id="K73" type="button" class="vk-btn" style="user-select: none;" disabled="true">i</button>
+                                                <button id="K79" type="button" class="vk-btn" style="user-select: none;" disabled="true">o</button>
+                                                <button id="K80" type="button" class="vk-btn" style="user-select: none;" disabled="true">p</button>
+                                                <button id="K219" type="button" class="vk-btn" style="user-select: none;" disabled="true">[</button>
+                                                <button id="K221" type="button" class="vk-btn" style="user-select: none;" disabled="true">]</button>
+                                            </div><div style="white-space: nowrap; user-select: none;">
+                                                <button id="K65" type="button" class="vk-btn" disabled="true" style="user-select: none;">a</button>
+                                                <button id="K83" type="button" class="vk-btn" disabled="true" style="user-select: none;">s</button>
+                                                <button id="K68" type="button" class="vk-btn" disabled="true" style="user-select: none;">d</button>
+                                                <button id="K70" type="button" class="vk-btn" disabled="true" style="user-select: none;">f</button>
+                                                <button id="K71" type="button" class="vk-btn" disabled="true" style="user-select: none;">g</button>
+                                                <button id="K72" type="button" class="vk-btn" disabled="true" style="user-select: none;">h</button>
+                                                <button id="K74" type="button" class="vk-btn" disabled="true" style="user-select: none;">j</button>
+                                                <button id="K75" type="button" class="vk-btn" disabled="true" style="user-select: none;">k</button>
+                                                <button id="K76" type="button" class="vk-btn" disabled="true" style="user-select: none;">l</button>
+                                                <button id="K186" type="button" class="vk-btn" disabled="true" style="user-select: none;">;</button>
+                                                <button id="K222" type="button" class="vk-btn" disabled="true" style="user-select: none;">'</button>
+                                                <button id="K220" type="button" class="vk-btn" style="user-select: none; width: 22px;" disabled="true">\</button>
+                                            </div><div style="white-space: nowrap; user-select: none;">
+                                                <button id="K16L" type="button" class="vk-btn" disabled="true" style="user-select: none; width: 40px;"><span class="vk-cap" style="user-select: none;">⇧</button>
+                                                <button id="K90" type="button" class="vk-btn" disabled="true" style="user-select: none;">z</button>
+                                                <button id="K88" type="button" class="vk-btn" disabled="true" style="user-select: none;">x</button>
+                                                <button id="K67" type="button" class="vk-btn" disabled="true" style="user-select: none;">c</button>
+                                                <button id="K86" type="button" class="vk-btn" disabled="true" style="user-select: none;">v</button>
+                                                <button id="K66" type="button" class="vk-btn" disabled="true" style="user-select: none;">b</button>
+                                                <button id="K78" type="button" class="vk-btn" disabled="true" style="user-select: none;">n</button>
+                                                <button id="K77" type="button" class="vk-btn" disabled="true" style="user-select: none;">m</button>
+                                                <button id="K188" type="button" class="vk-btn" disabled="true" style="user-select: none;">,</button>
+                                                <button id="K190" type="button" class="vk-btn" disabled="true" style="user-select: none;">.</button>
+                                                <button id="K191" type="button" class="vk-btn" disabled="true" style="user-select: none;">/</button>
+                                                <button id="K16R" type="button" class="vk-btn" disabled="true" style="user-select: none; width: 40px;"><span class="vk-cap" style="user-select: none;">⇧</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li id="borrowings" onclick="myCheck(0)" style="background-color: #980600"><a>假</a></li>
+                                <li id="variants" onclick="myCheck(1)" style="background-color: #006d39"><a>異</a></li>
+                                @*<li id="autocomplete" onclick="myCheck(2)"><a>…</a></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </td>
+            <td valign="top" style="padding: 1px 2px; ">
+
+                <table id="outlist">
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div id="rubytype"></div>
+                        </td>
+                    </tr>
+                    <tr><td>1</td><td id="w1" class="outopt" onclick="setSelectedIndex(1)"></td></tr>
+                    <tr><td>2</td><td id="w2" class="outopt" onclick="setSelectedIndex(2)"></td></tr>
+                    <tr><td>3</td><td id="w3" class="outopt" onclick="setSelectedIndex(3)"></td></tr>
+                    <tr><td>4</td><td id="w4" class="outopt" onclick="setSelectedIndex(4)"></td></tr>
+                    <tr><td>5</td><td id="w5" class="outopt" onclick="setSelectedIndex(5)"></td></tr>
+                    <tr><td>6</td><td id="w6" class="outopt" onclick="setSelectedIndex(6)"></td></tr>
+                    <tr><td>7</td><td id="w7" class="outopt" onclick="setSelectedIndex(7)"></td></tr>
+                    <tr><td>8</td><td id="w8" class="outopt" onclick="setSelectedIndex(8)"></td></tr>
+                    <tr><td>9</td><td id="w9" class="outopt" onclick="setSelectedIndex(9)"></td></tr>
+                </table>
+                <div class="scrollable-menu" id="example">
+                    <table>
+                        <tr>
+                            <td>
+                                @Resources.GUILang.DictGuide
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
