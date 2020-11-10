@@ -23,6 +23,17 @@
 @Html.Hidden("SinoTailue", Resources.GUILang.SinoTailue)
 @Html.Hidden("SinoTaiyo", Resources.GUILang.SinoTaiyo)
 @Html.Hidden("DictGuide", Resources.GUILang.DictGuide)
+@Html.Hidden("Beijing", Resources.GUILang.Beijing)
+@Html.Hidden("Taipei", Resources.GUILang.Taipei)
+@Html.Hidden("HongKong", Resources.GUILang.HongKong)
+@Html.Hidden("HaNoi", Resources.GUILang.HaNoi)
+@Html.Hidden("SaiGon", Resources.GUILang.SaiGon)
+@Html.Hidden("HoaAn", Resources.GUILang.HoaAn)
+@Html.Hidden("CoXau", Resources.GUILang.CoXau)
+@Html.Hidden("Tokyo", Resources.GUILang.Tokyo)
+@Html.Hidden("Bangkok", Resources.GUILang.Bangkok)
+@Html.Hidden("Seoul", Resources.GUILang.Seoul)
+@Html.Hidden("Vientiane", Resources.GUILang.Vientiane)
 
 <div id="waitscreen"></div>
 <script type="text/javascript">
@@ -40,6 +51,7 @@
 <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../Scripts/sql.js"></script>
 <script type="text/javascript" src="../Scripts/ime.js"></script>
+<script type="text/javascript" src="../Scripts/transliterate.js"></script>
 <script src="https://code.responsivevoice.org/responsivevoice.js?key=oxZ9YHww"></script>
 @*<script src='https://code.responsivevoice.org/responsivevoice.js'></script>*@
 <div class="jumbotron">
@@ -93,16 +105,19 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li id="kb0" onclick="optkeyboard(0)"><a>Eng → 文</a></li>
-                                        <li id="kb1" onclick="optkeyboard(1)"><a>Eng → ở/อ/か/글</a></li>
-                                        <li id="kb1" onclick="optkeyboard(2)"><a>ở/อ/か/글 → 文</a></li>
+                                        <li id="kb1" onclick="optkeyboard(1)"><a>Eng → ở/か/글</a></li>
+                                        <li id="kb1" onclick="optkeyboard(2)"><a>ở/か/글 → 文</a></li>
                                     </ul>
                                 </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li style="background-color: #d48600">
-                                    <a onclick="speakpad()" style="padding: 0px;">
+                                <li class="dropup" style="background-color: #d48600">
+                                    <a style="padding: 0px;" class="dropdown-toggle" data-toggle="dropdown">
                                         <span><img class="funcbutt speakbutt" src="/Resources/speak.png"/></span>
                                     </a>
+                                    <ul id="accentspeak" class="dropdown-menu">
+                                        <li onclick="speakpad(0)"><a>@Resources.GUILang.HaNoi</a></li>
+                                    </ul>
                                 </li>
                                 <li class="dropup" style="background-color: #121890">
                                     <a style="padding: 0px;" class="dropdown-toggle" data-toggle="dropdown">
@@ -110,9 +125,11 @@
                                             <img class="funcbutt transbutt" src="/Resources/transcript.png"/>
                                         </span>
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li onclick="convertpad(0)"><a>文 → A/글</a></li>
-                                        <li onclick="convertpad(1)"><a>A/글 → 文</a></li>
+                                    <ul id="accentipa" class="dropdown-menu">
+                                        <li onclick="logo2ipa('HaNoi')"><a>IPA: @Resources.GUILang.HaNoi</a></li>
+                                        <li onclick="logo2ipa('SaiGon')"><a>IPA: @Resources.GUILang.SaiGon</a></li>
+                                        <li onclick="convertpad(0)"><a>文 → ở/か/글</a></li>
+                                        <li onclick="convertpad(1)"><a>ở/か/글 → 文</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropup" id="keyboardbutton" onclick="togglekeyboard()" style="background-color: #eee;">

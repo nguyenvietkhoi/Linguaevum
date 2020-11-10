@@ -29,6 +29,7 @@ var optruby = "ruby";
 var optlev = "and level>1";
 var sugCB = false;
 var quocngu = 0;
+var convertdeftext = '<li onclick="convertpad(0)"><a>文 → ở/か/글</a></li><li onclick="convertpad(1)"><a>ở/か/글 → 文</a></li>';
 
 var oo = false;
 self.addEventListener('fetch', function (event) {
@@ -93,27 +94,87 @@ function myCheck(boxclick) {
 function opttableselect(tablesel) {
     quocngu = tablesel;
     switch (quocngu) {
-        case 0: opttable = "rubynom"; break;
-        case 1: opttable = "rubytriung"; break;
-        case 2: opttable = "rubyhok"; break;
-        case 3: opttable = "rubyfoo"; break;
-        case 4: opttable = "rubyhakk"; break;
-        case 5: opttable = "rubymand"; break;
-        case 6: opttable = "rubycant"; break;
-        case 7: opttable = "rubysou"; break;
-        case 8: opttable = "rubykor"; break;
-        case 9: opttable = "rubyjap"; break;
-        case 10: opttable = "rubycuen"; break;
-        case 11: opttable = "rubytay"; break;
-        case 12: opttable = "rubythai"; break;
-        case 13: opttable = "rubylao"; break;
-        case 14: opttable = "rubytaidam"; break;
-        case 15: opttable = "rubylanna"; break;
-        case 16: opttable = "rubytaiyai"; break;
-        case 17: opttable = "rubytainuea"; break;
-        case 18: opttable = "rubytailue"; break;
-        case 19: opttable = "rubytaiyo"; break;
-        default: opttable = "rubynom"; break;
+        case 1: opttable = "rubytriung";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 2: opttable = "rubyhok";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>'+$("#Taipei").val()+'</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 3: opttable = "rubyfoo";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 4: opttable = "rubyhakk";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 5: opttable = "rubymand";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>'+$("#Beijing").val()+'</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 6: opttable = "rubycant";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>'+$("#HongKong").val()+'</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 7: opttable = "rubysou";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 8: opttable = "rubykor";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>'+$("#Seoul").val()+'</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 9: opttable = "rubyjap";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>'+$("#Tokyo").val()+'</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 10: opttable = "rubycuen";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 11: opttable = "rubytay";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = ('<li onclick="logo2ipa(\'HoaAn\')"><a>IPA: '+$("#HoaAn").val()+'</a></li>' + '<li onclick="logo2ipa(\'CoXau\')"><a>IPA: '+$("#CoXau").val()+'</a></li>' + convertdeftext);
+            break;
+        case 12: opttable = "rubythai";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>' + $("#Bangkok").val() + '</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 13: opttable = "rubylao";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>' + $("#Vientiane").val() + '</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 14: opttable = "rubytaidam";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 15: opttable = "rubylanna";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 16: opttable = "rubytaiyai";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 17: opttable = "rubytainuea";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 18: opttable = "rubytailue";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 19: opttable = "rubytaiyo";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>N/A</a></li>');
+            document.getElementById('accentipa').innerHTML = (convertdeftext);
+            break;
+        case 0:
+        default: opttable = "rubynom";
+            document.getElementById('accentspeak').innerHTML = ('<li onclick="speakpad(' + quocngu + ')"><a>'+$("#HaNoi").val()+'</a></li>');
+            document.getElementById('accentipa').innerHTML = ('<li onclick="logo2ipa(\'HaNoi\')"><a>IPA: '+$("#HaNoi").val()+'</a></li>' + '<li onclick="logo2ipa(\'SaiGon\')"><a>IPA: '+$("#SaiGon").val()+'</a></li>' + convertdeftext);
+            break;
     }
     loadkeyboard();
     $("#opttablename").html(opttablelist[tablesel]);
@@ -576,6 +637,58 @@ function convertpad(direction) {
         default: break;
     }
     if (convtxt.length > 0) {
+        $("#txtPad").css({ 'width': '50%' });
+        $("#txtPadout").css({ 'display': 'block' });
+        $("#txtPadout").val(convtxt);
+    } else {
+        offpad();
+    }
+}
+
+function logo2ipa(accent) {
+    var phrase = "";
+    var convtxt = "";
+    var ipaword;
+    phrase = logo2phon($("#txtPad").val());
+
+    if (phrase.length > 0) {
+        phrase = phrase.replace(/\./g, " | ");
+        phrase = phrase.replace(/,/g, " | ");
+        phrase = phrase.replace(/:/g, " | ");
+        phrase = phrase.replace(/;/g, " | ");
+        phrase = phrase.replace(/\//g, " / ");
+        phrase = phrase.replace(/\?/g, " ? ");
+        phrase = phrase.replace(/!/g, " ! ");
+        phrase = phrase.replace(/\t/g, " \t ");
+        phrase = phrase.replace(/\n/g, " \n ");
+        phrase = phrase.replace(/\r/g, " \r ");
+        phrase = phrase.replace(/  /g, " ");
+        var word = phrase.split(" ");
+        var prespace = "";
+        for (var i = 0; i < word.length; i++) {
+            if (i > 0)
+                prespace = " ";
+            if ("|/?!\t\n\r".includes(word[i]))
+                convtxt += prespace + word[i];
+            else {
+                switch (accent) {
+                    case 'HoaAn': case 'CoXau':
+                        ipaword = TayIPA(word[i], accent);
+                        convtxt += (prespace + ipaword.onset + ipaword.rime + ipaword.tone);
+                        break;
+                    case 'HaNoi':
+                        ipaword = VietIPA(word[i], accent);
+                        convtxt += (prespace + ipaword.onset + ipaword.rime + ipaword.tone);
+                        break;
+                    case 'SaiGon':
+                        ipaword = VietIPA(word[i], accent);
+                        convtxt += (prespace + ipaword.onset + ipaword.rime + ipaword.tone);
+                        break;
+                    default: break;
+                }
+            }
+        }
+        convtxt
         $("#txtPad").css({ 'width': '50%' });
         $("#txtPadout").css({ 'display': 'block' });
         $("#txtPadout").val(convtxt);
@@ -1669,12 +1782,12 @@ function TAILE(text, ch) {
     var tch = "";
     switch (ch) {
         case '0': tch = "0"; break;
-        case '1': tch = "ᥨ"; break;
+        case '1': tch = "ᥴ"; break;
         case '2': tch = "ᥰ"; break;
         case '3': tch = "ᥱ"; break;
         case '4': tch = "ᥲ"; break;
         case '5': tch = "ᥳ"; break;
-        case '6': tch = "ᥴ"; break;
+        case '6': tch = "ᥨ"; break;
         case '7': tch = "ᥦ"; break;
         case '8': tch = "ᥪ"; break;
         case '9': tch = "ᥫ"; break;
@@ -1713,11 +1826,11 @@ function TAILE(text, ch) {
     var t = text[text.length - 1];
     var roma = t + ch;
     switch (roma) {
+        case '01': roma = "́"; break;
         case '02': roma = "̈"; break;
         case '03': roma = "̌"; break;
         case '04': roma = "̀"; break;
         case '05': roma = "̇"; break;
-        case '06': roma = "́"; break;
         default: roma = t + tch; break;
     }
     return text.substring(0, text.length - 1) + roma;
@@ -1947,18 +2060,25 @@ function TELEX(text, ch, ethn) {
                     case 'u':
                         if (ch == 'a')
                             break;
-                    case 'y':
                     case 'ư':
                         if ((qu == -1) || (gi != -1))
+                            l--;
+                        break;
+                    case 'y':
                             l--;
                         break;
                 }
                 break;
             case 'o':
+            case 'ư':
                 if ((a[l - 1] == 'u') || (a[l - 1] == 'i'))
                     break;
             case 'u':
+                if ((gi == 1) && (a[l - 1] == 'i'))
+                    break;
             case 'i':
+                if ((qu == 1) && (gi == -1) && (a[l - 1] == 'u'))
+                    break;
 				nc = mcTELEX(a[l - 1], ch, ethn);
 				if (nc=="")
 					return a.substring(0, l - 1) + a.substring(l);
@@ -3951,12 +4071,12 @@ function speakHokkien(inp) {
     }
 }
 
-function speakpad() {
+function speakpad(accentcode) {
     var voice = "";
     var spkcont = "";
     var convtxt = logo2phon($("#txtPad").val());
     if (convtxt.length > 0) {
-        switch (quocngu) {
+        switch (accentcode) {
             case 0: voice = "Vietnamese Male"; spkcont = convtxt; break;
             case 2:
                 speakHokkien(convtxt);
@@ -4120,8 +4240,8 @@ function loadkeyboard() {
                 $('#K53').html("<span style='color: #d22e9f;'>๕   </span><br>โ");
                 $('#K54').html("<span style='color: #d22e9f;'>๖   </span><br>ใ");
                 $('#K55').html("<span style='color: #d22e9f;'>๗   </span><br>ไ");
-                $('#K56').html("<span style='color: #d22e9f;'>๘   </span><br><span style='color: #ffc000;'>◌ำ</span>");
-                $('#K57').html("<span style='color: #d22e9f;'>๙   </span><br><span style='color: #ffc000;'>◌็</span>");
+                $('#K56').html("<span style='color: #d22e9f;'>๘   </span><br><span style='color: #7ba064;'>◌ำ</span>");
+                $('#K57').html("<span style='color: #d22e9f;'>๙   </span><br><span style='color: #7ba064;'>◌็</span>");
                 $('#K81').html("<span style='color: #d22e9f;'>ซ   </span><br><span style='color: #13abbb;'>ฌ </span>ช");
                 $('#K87').html("<span style='color: #b1bb13;'>◌ื</span><br><span style='color: #7ba064;'>◌ื</span>");
                 $('#K69').html("<span style='color: #b1bb13;'>แ</span><br><span style='color: #7ba064;'>เ</span>");
@@ -4169,7 +4289,7 @@ function loadkeyboard() {
                 $('#K54').html("<span style='color: #d22e9f;'>໖   </span><br>ໃ");
                 $('#K55').html("<span style='color: #d22e9f;'>໗   </span><br>ໄ");
                 $('#K56').html("<span style='color: #d22e9f;'>໘   </span><br>ຽ");
-                $('#K57').html("<span style='color: #d22e9f;'>໙   </span><br><span style='color: #ffc000;'>◌ົ</span>");
+                $('#K57').html("<span style='color: #d22e9f;'>໙   </span><br><span style='color: #7ba064;'>◌ົ</span>");
                 $('#K81').html("<br><span style='color: #13abbb;'>ຌ </span>ຊ");
                 $('#K87').html("<span style='color: #b1bb13;'>◌ື</span><br><span style='color: #7ba064;'>◌ຶ</span>");
                 $('#K69').html("<span style='color: #b1bb13;'>ແ</span><br><span style='color: #7ba064;'>ເ</span>");
@@ -4259,15 +4379,15 @@ function loadkeyboard() {
                 $('#K48').html("<span style='color: #d22e9f;'>᪐  </span><span style='color: #b1bb13;'>ᩡ</span><br><span style='color: #d22e9f;'>᪀  </span><span style='color: #7ba064;'> ᩫ</span>");
                 $('#K49').html("<span style='color: #d22e9f;'>᪑ </span><span style='color: #b1bb13;'> ᩷</span><br><span style='color: #d22e9f;'>᪁  </span><span style='color: #7ba064;'> ᩵</span>");
                 $('#K50').html("<span style='color: #d22e9f;'>᪒   </span><span style='color: #b1bb13;'> ᩸</span><br><span style='color: #d22e9f;'>᪂  </span><span style='color: #7ba064;'> ᩶</span>");
-                $('#K51').html("<span style='color: #d22e9f;'>᪓   </span><br><span style='color: #d22e9f;'>᪃ </span><span style='color: #ffc000;'>ᩕ◌ </span>");
-                $('#K52').html("<span style='color: #d22e9f;'>᪔   </span><br><span style='color: #d22e9f;'>᪄   </span><span style='color: #ffc000;'> ᩖ</span>");
+                $('#K51').html("<span style='color: #d22e9f;'>᪓   </span><br><span style='color: #d22e9f;'>᪃ </span><span style='color: #7ba064;'>ᩕ◌ </span>");
+                $('#K52').html("<span style='color: #d22e9f;'>᪔   </span><br><span style='color: #d22e9f;'>᪄   </span><span style='color: #7ba064;'> ᩖ</span>");
                 $('#K53').html("<span style='color: #d22e9f;'>᪕ </span><span style='color: #b1bb13;'>ᩒ</span><br><span style='color: #d22e9f;'>᪅ </span><span style='color: #7ba064;'>ᩰ   </span>");
                 $('#K54').html("<span style='color: #d22e9f;'>᪖   </span><br><span style='color: #d22e9f;'>᪆  </span>ᩲ");
                 $('#K55').html("<span style='color: #d22e9f;'>᪗   </span><br><span style='color: #d22e9f;'>᪇  </span>ᩱ");
                 $('#K56').html("<span style='color: #d22e9f;'>᪘ </span><span style='color: #b1bb13;'> ᩼</span><br><span style='color: #d22e9f;'>᪈ </span><span style='color: #7ba064;'> ◌​᩠</span>");
                 $('#K57').html("<span style='color: #d22e9f;'>᪙   </span><span style='color: #b1bb13;'> ᩴ</span><br><span style='color: #d22e9f;'>᪉   </span><span style='color: #7ba064;'> ᩢ</span>");
                 $('#K81').html("<span style='color: #d22e9f;'>ᨪ   </span><br><span style='color: #13abbb;'>ᨫ </span>ᨩ");
-                $('#K87').html("<span style='color: #d22e9f;'>ᩐ   </span><br><span style='color: #ffc000;'> ᩪ</span>");
+                $('#K87').html("<span style='color: #d22e9f;'>ᩐ   </span><br><span style='color: #7ba064;'> ᩪ</span>");
                 $('#K69').html("<span style='color: #d22e9f;'>ᩑ </span><span style='color: #b1bb13;'>ᩯ</span><br><span style='color: #7ba064;'>ᩮ</span>");
                 $('#K82').html("<span style='color: #d22e9f;'>ᩂ   </span><br><span style='color: #13abbb;'>◌​᩺ </span>ᩁ");
                 $('#K84').html("<span style='color: #d22e9f;'>ᨮ   </span><br><span style='color: #13abbb;'>ᨭ </span>ᨲ");
@@ -4353,12 +4473,12 @@ function loadkeyboard() {
             case 17:
                 $('#K192').html("<br>`");
                 $('#K48').html("<br><span style='color: #cc4444;'>0</span>");
-                $('#K49').html("<br>ᥨ");
+                $('#K49').html("<span style='color: #d22e9f;'>◌́   </span><br>ᥴ");
                 $('#K50').html("<span style='color: #d22e9f;'>◌̈   </span><br>ᥰ");
                 $('#K51').html("<span style='color: #d22e9f;'>◌̌   </span><br>ᥱ");
                 $('#K52').html("<span style='color: #d22e9f;'>◌̀   </span><br>ᥲ");
                 $('#K53').html("<span style='color: #d22e9f;'>◌̇   </span><br>ᥳ");
-                $('#K54').html("<span style='color: #d22e9f;'>◌́   </span><br>ᥴ");
+                $('#K54').html("<br>ᥨ");
                 $('#K55').html("<br>ᥦ");
                 $('#K56').html("<br>ᥪ");
                 $('#K57').html("<br>ᥫ");

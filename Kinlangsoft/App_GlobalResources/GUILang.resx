@@ -123,11 +123,20 @@
   <data name="Bali" xml:space="preserve">
     <value>Aksara Bali</value>
   </data>
+  <data name="Bangkok" xml:space="preserve">
+    <value>Bangkok</value>
+  </data>
+  <data name="Beijing" xml:space="preserve">
+    <value>Běijīng</value>
+  </data>
   <data name="Brahmic" xml:space="preserve">
     <value>Aksara IME</value>
   </data>
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
+  </data>
+  <data name="CoXau" xml:space="preserve">
+    <value>Co Xầu</value>
   </data>
   <data name="DictGuide" xml:space="preserve">
     <value>Hold SHIFT down for Examples</value>
@@ -143,6 +152,12 @@
   </data>
   <data name="Hannom" xml:space="preserve">
     <value>Hán - Nôm</value>
+  </data>
+  <data name="HaNoi" xml:space="preserve">
+    <value>Hà Nội</value>
+  </data>
+  <data name="HoaAn" xml:space="preserve">
+    <value>Hoà An</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home page</value>
@@ -189,8 +204,14 @@
   <data name="PhonoDes" xml:space="preserve">
     <value>Pronunciation instruction and Text-to-speech tool with human sounding.</value>
   </data>
+  <data name="SaiGon" xml:space="preserve">
+    <value>Sài Gòn</value>
+  </data>
   <data name="Sawndip" xml:space="preserve">
     <value>Saw-ndip</value>
+  </data>
+  <data name="Seoul" xml:space="preserve">
+    <value>Seoul</value>
   </data>
   <data name="Sinic" xml:space="preserve">
     <value>Sinogram IME</value>
@@ -228,6 +249,12 @@
   <data name="Thailand" xml:space="preserve">
     <value>Thai</value>
   </data>
+  <data name="Tokyo" xml:space="preserve">
+    <value>Tōkyō</value>
+  </data>
+  <data name="Vientiane" xml:space="preserve">
+    <value>Viang Chan</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to Linguaevum</value>
   </data>
@@ -236,5 +263,11 @@
   </data>
   <data name="Yue" xml:space="preserve">
     <value>Cantonese</value>
+  </data>
+  <data name="HongKong" xml:space="preserve">
+    <value>Hong Kong</value>
+  </data>
+  <data name="Taipei" xml:space="preserve">
+    <value>Taipei</value>
   </data>
 </root>

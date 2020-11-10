@@ -93,13 +93,18 @@ src: url('../fonts/HanaMinA.ttf') format('truetype')
 unicode-range: U+4E00-9FFF, U+3400-4DBF;
 }
 @font-face {
-font-family: HanaMinB;
-src: url('../fonts/HanaMinB.ttf') format('truetype')
+font-family: sim-ch_n5100;
+src: url('../fonts/gw2696945.ttf') format('truetype')
 ;
 }
 @font-face {
 font-family: TaiViet;
 src: url('../fonts/TaiViet.ttf') format('truetype')
+;
+}
+@font-face {
+font-family: "Tai Son La";
+src: url('../fonts/Tai-Son-La.ttf') format('truetype')
 ;
 }
 @font-face {
@@ -156,7 +161,7 @@ src: url('../fonts/CambriaAsean.ttf') format('truetype')
 
 #txtPad, #txtPadout {    
     min-height: 500px;
-    font-family: "Tahoma", "Tai Lanna", "Cambria ASEAN", "Lanexang Mon4", "Microsoft New Tai Lue", sans-serif, "Tai Son La", TaiViet, "Segoe Ahom Print", "Helvetica Neue", Helvetica, Arial, SimSun, HanaMinA, HanaMinB, "Malgun Gothic", "BabelStone Han", Sawndip, SimSun-ExtB, "Nom Na Tong", 'Han-Nom Gothic Supplement';
+    font-family: Cambria, Tahoma, "Tai Lanna", "Cambria ASEAN", "Lanexang Mon4", "Microsoft New Tai Lue", sans-serif, "Tai Son La", TaiViet, "Segoe Ahom Print", "Helvetica Neue", Helvetica, Arial, SimSun, HanaMinA, HanaMinB, sim-ch_n5100, "Malgun Gothic", "BabelStone Han", Sawndip, SimSun-ExtB, "Nom Na Tong", 'Han-Nom Gothic Supplement';
     background-color: #eee;
     color: #000;
 }

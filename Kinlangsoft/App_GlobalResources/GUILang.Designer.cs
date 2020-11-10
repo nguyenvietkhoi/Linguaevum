@@ -79,6 +79,24 @@ namespace Linguaevum.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bangkok.
+        /// </summary>
+        public static string Bangkok {
+            get {
+                return ResourceManager.GetString("Bangkok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Běijīng.
+        /// </summary>
+        public static string Beijing {
+            get {
+                return ResourceManager.GetString("Beijing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aksara IME.
         /// </summary>
         public static string Brahmic {
@@ -93,6 +111,15 @@ namespace Linguaevum.App_GlobalResources {
         public static string Contacts {
             get {
                 return ResourceManager.GetString("Contacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Co Xầu.
+        /// </summary>
+        public static string CoXau {
+            get {
+                return ResourceManager.GetString("CoXau", resourceCulture);
             }
         }
         
@@ -142,11 +169,38 @@ namespace Linguaevum.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hà Nội.
+        /// </summary>
+        public static string HaNoi {
+            get {
+                return ResourceManager.GetString("HaNoi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hoà An.
+        /// </summary>
+        public static string HoaAn {
+            get {
+                return ResourceManager.GetString("HoaAn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home page.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hong Kong.
+        /// </summary>
+        public static string HongKong {
+            get {
+                return ResourceManager.GetString("HongKong", resourceCulture);
             }
         }
         
@@ -277,11 +331,29 @@ namespace Linguaevum.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sài Gòn.
+        /// </summary>
+        public static string SaiGon {
+            get {
+                return ResourceManager.GetString("SaiGon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saw-ndip.
         /// </summary>
         public static string Sawndip {
             get {
                 return ResourceManager.GetString("Sawndip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seoul.
+        /// </summary>
+        public static string Seoul {
+            get {
+                return ResourceManager.GetString("Seoul", resourceCulture);
             }
         }
         
@@ -376,6 +448,15 @@ namespace Linguaevum.App_GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Taipei.
+        /// </summary>
+        public static string Taipei {
+            get {
+                return ResourceManager.GetString("Taipei", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sino - Tày.
         /// </summary>
         public static string Tay {
@@ -390,6 +471,24 @@ namespace Linguaevum.App_GlobalResources {
         public static string Thailand {
             get {
                 return ResourceManager.GetString("Thailand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tōkyō.
+        /// </summary>
+        public static string Tokyo {
+            get {
+                return ResourceManager.GetString("Tokyo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Viang Chan.
+        /// </summary>
+        public static string Vientiane {
+            get {
+                return ResourceManager.GetString("Vientiane", resourceCulture);
             }
         }
         

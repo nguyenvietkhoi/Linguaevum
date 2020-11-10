@@ -120,8 +120,17 @@
   <data name="Autocomplete" xml:space="preserve">
     <value>Tự gợi ý</value>
   </data>
+  <data name="Bangkok" xml:space="preserve">
+    <value>Bangkok</value>
+  </data>
+  <data name="Beijing" xml:space="preserve">
+    <value>Bắc Kinh</value>
+  </data>
   <data name="Contacts" xml:space="preserve">
     <value>Liên hệ</value>
+  </data>
+  <data name="CoXau" xml:space="preserve">
+    <value>Co Xầu</value>
   </data>
   <data name="DictGuide" xml:space="preserve">
     <value>Giữ SHIFT để xem Ví dụ</value>
@@ -137,6 +146,12 @@
   </data>
   <data name="Hannom" xml:space="preserve">
     <value>Hán Nôm</value>
+  </data>
+  <data name="HaNoi" xml:space="preserve">
+    <value>Hà Nội</value>
+  </data>
+  <data name="HoaAn" xml:space="preserve">
+    <value>Hoà An</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>Trang chủ</value>
@@ -171,8 +186,14 @@
   <data name="PhonoDes" xml:space="preserve">
     <value>Hướng dẫn phát âm và Công cụ Đọc văn bản bằng giọng người thật.</value>
   </data>
+  <data name="SaiGon" xml:space="preserve">
+    <value>Sài Gòn</value>
+  </data>
   <data name="Sawndip" xml:space="preserve">
     <value>Hán Tráng</value>
+  </data>
+  <data name="Seoul" xml:space="preserve">
+    <value>Seoul</value>
   </data>
   <data name="SinoLanna" xml:space="preserve">
     <value>Hán Lạn Nà</value>
@@ -204,6 +225,12 @@
   <data name="Tay" xml:space="preserve">
     <value>Hán Tày</value>
   </data>
+  <data name="Tokyo" xml:space="preserve">
+    <value>Tōkyō</value>
+  </data>
+  <data name="Vientiane" xml:space="preserve">
+    <value>Viêng Chăn</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Linguaevum xin kính chào</value>
   </data>
@@ -212,5 +239,11 @@
   </data>
   <data name="Yue" xml:space="preserve">
     <value>Quảng Đông</value>
+  </data>
+  <data name="HongKong" xml:space="preserve">
+    <value>Hương Cảng</value>
+  </data>
+  <data name="Taipei" xml:space="preserve">
+    <value>Đài Bắc</value>
   </data>
 </root>

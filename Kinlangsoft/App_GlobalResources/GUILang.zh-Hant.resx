@@ -120,8 +120,17 @@
   <data name="Autocomplete" xml:space="preserve">
     <value>自㨳意</value>
   </data>
+  <data name="Bangkok" xml:space="preserve">
+    <value>䄘𫈅</value>
+  </data>
+  <data name="Beijing" xml:space="preserve">
+    <value>北京</value>
+  </data>
   <data name="Contacts" xml:space="preserve">
     <value>聯繫</value>
+  </data>
+  <data name="CoXau" xml:space="preserve">
+    <value>󴫂𮇈</value>
   </data>
   <data name="Eastmin" xml:space="preserve">
     <value>閩東</value>
@@ -134,6 +143,12 @@
   </data>
   <data name="Hannom" xml:space="preserve">
     <value>漢喃</value>
+  </data>
+  <data name="HaNoi" xml:space="preserve">
+    <value>河內</value>
+  </data>
+  <data name="HoaAn" xml:space="preserve">
+    <value>和安</value>
   </data>
   <data name="Home" xml:space="preserve">
     <value>張主</value>
@@ -168,8 +183,14 @@
   <data name="PhonoDes" xml:space="preserve">
     <value>向引發音吧工具讀文本平喠𠊛實。</value>
   </data>
+  <data name="SaiGon" xml:space="preserve">
+    <value>柴棍</value>
+  </data>
   <data name="Sawndip" xml:space="preserve">
     <value>漢壯</value>
+  </data>
+  <data name="Seoul" xml:space="preserve">
+    <value>서울</value>
   </data>
   <data name="SinoLanna" xml:space="preserve">
     <value>漢爛𪽖</value>
@@ -181,16 +202,16 @@
     <value>漢傣𪓇</value>
   </data>
   <data name="SinoTailue" xml:space="preserve">
-    <value>漢齊慮</value>
+    <value>漢傣慮</value>
   </data>
   <data name="SinoTainuea" xml:space="preserve">
-    <value>漢齊𪥤</value>
+    <value>漢傣𪥤</value>
   </data>
   <data name="SinoTaiyai" xml:space="preserve">
-    <value>漢齊𥹡</value>
+    <value>漢傣𥹡</value>
   </data>
   <data name="SinoTaiyo" xml:space="preserve">
-    <value>漢齊孺</value>
+    <value>漢傣孺</value>
   </data>
   <data name="SinoThai" xml:space="preserve">
     <value>漢暹</value>
@@ -199,7 +220,13 @@
     <value>閩南</value>
   </data>
   <data name="Tay" xml:space="preserve">
-    <value>漢齊</value>
+    <value>漢傣</value>
+  </data>
+  <data name="Tokyo" xml:space="preserve">
+    <value>東京</value>
+  </data>
+  <data name="Vientiane" xml:space="preserve">
+    <value>𰋯栴</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Linguaevum 吀敬朝</value>
@@ -209,5 +236,11 @@
   </data>
   <data name="Yue" xml:space="preserve">
     <value>廣東</value>
+  </data>
+  <data name="HongKong" xml:space="preserve">
+    <value>香港</value>
+  </data>
+  <data name="Taipei" xml:space="preserve">
+    <value>臺北</value>
   </data>
 </root>
